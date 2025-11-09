@@ -7,7 +7,6 @@
 //   plugins: [],
 // };
 
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -19,9 +18,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "orange-accent": "#F77D36"
-      }
-    }
-    
-  }
-}
+        "orange-accent": "#F77D36",
+      },
+    },
+  },
+};

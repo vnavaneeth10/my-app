@@ -26,10 +26,23 @@ export type GetModelsParams = {
 
 // Page Types
 export type CategoryPageProps = {
-    params: Promise<{
-        categoryName: string
-    }>
-}
+    params: {
+        categoryName: string;
+    };
+};
+
+export type ModelDetailPageProps = {
+    params: {
+        id: string;
+    };
+};
+
+// export type CategoryPageProps = {
+//     params: Promise<{
+//         categoryName: string
+//     }>
+// }
+
 
 export type RootLayoutProps = Readonly<{
     children: React.ReactNode;
@@ -37,15 +50,15 @@ export type RootLayoutProps = Readonly<{
 
 export type ModelsPageProps = {
     searchParams: {
-        q?: string | undefined;
+        query?: string | undefined;
     }
 }
 
-export type ModelDetailPageProps = {
-    params: Promise<{
-        id: string
-    }>
-}
+// export type ModelDetailPageProps = {
+//     params: Promise<{
+//         id: string
+//     }>
+// }
 
 // Components Types
 export type ModelCardProps = {
