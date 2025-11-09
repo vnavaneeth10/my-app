@@ -4,7 +4,11 @@ import type { ModelDetailPageProps } from "@/app/types"
 import { getModelById } from "@/app/lib/models"
 import placeholderImg from "@/public/placeholder.png"
 
-export default async function ModelDetailPage({ params }: ModelDetailPageProps) {
+export default async function ModelDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const { id } =  params
   const model = await getModelById(id)
 
