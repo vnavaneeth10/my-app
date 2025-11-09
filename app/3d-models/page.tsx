@@ -5,21 +5,19 @@ import Form from "next/form"
 
 export default async function Page({ searchParams }: ModelsPageProps) {
 
-
-
-
-
     const models = await getModels()
     const query = (await searchParams)?.query?.toLowerCase() || "";
-    // console.log("searchParams",query)
-    const filteredModels = query ? models.filter(model=>model.name.toLowerCase().includes(query)) || models.filter(model=>model.description.toLowerCase().includes(query)) : models;
-    console.log("filteredModels",filteredModels)
+    const filteredModels = query ? models.filter(model => model.name.toLowerCase().includes(query)) || models.filter(model => model.description.toLowerCase().includes(query)) : models;
+
     return (
-    <>
-    <Form action="/3d-models" className="w-full px-5 md:px-0 md:max-w-xl">
-        <label htmlFor="search">Search 3D Models : </label>
-        <input type="text"  autoComplete="off"  name="query" placeholder="Enter model name" className="w-full py-3 pl-5 pr-5 text-sm placeholder-gray-500 bg-white border border-[#606060] rounded-full focus:border-[#606060] focus:outline-none focus:ring-0 md:text-base" defaultValue={query}/>
-    </Form>
-    <ModelsGrid title="3D Models" models={filteredModels} />
-    </>)
+        <>
+            <Form action="/3d-models" className="w-full px-5 md:px-0 md:max-w-xl">
+                <label htmlFor="search">Search 3D Models : </label>
+                <input type="text" autoComplete="off" name="query" placeholder="Enter model name" className="w-full py-3 pl-5 pr-5 text-sm placeholder-gray-500 bg-white border border-[#606060] rounded-full focus:border-[#606060] focus:outline-none focus:ring-0 md:text-base" defaultValue={query} />
+            </Form>
+
+            <ModelsGrid title="3D Models" models={filteredModels} />
+        </>
+
+    )
 }
