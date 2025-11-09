@@ -37,11 +37,18 @@ export type GetModelsParams = {
 //     };
 // };
 
+// export type CategoryPageProps = {
+//     params: Promise<{
+//         categoryName: string
+//     }>
+// }
+
 export type CategoryPageProps = {
-    params: Promise<{
-        categoryName: string
-    }>
-}
+  params: {
+    categoryName: string;
+  };
+};
+
 
 
 export type RootLayoutProps = Readonly<{
@@ -54,11 +61,18 @@ export type ModelsPageProps = {
     }
 }
 
+// export type ModelDetailPageProps = {
+//     params: Promise<{
+//         id: string
+//     }>
+// }
+
+
 export type ModelDetailPageProps = {
-    params: Promise<{
-        id: string
-    }>
-}
+  params: {
+    id: string;
+  };
+};
 
 // Components Types
 export type ModelCardProps = {
