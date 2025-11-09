@@ -3,12 +3,10 @@ import Pill from "@/app/components/Pill"
 import type { ModelDetailPageProps } from "@/app/types"
 import { getModelById } from "@/app/lib/models"
 import placeholderImg from "@/public/placeholder.png"
-import { notFound } from "next/navigation"
 
 export default async function ModelDetailPage({ params }: ModelDetailPageProps) {
-  const { id } = await params
-  const model = await getModelById(id).catch(() => null)
-  if (!model) return notFound()
+  const { id } =  params
+  const model = await getModelById(id)
 
   return (
     <div className="container max-w-6xl px-4 py-8 mx-auto">
